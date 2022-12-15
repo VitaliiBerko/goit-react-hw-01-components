@@ -2,6 +2,7 @@ import Profile from './Profile';
 import user from '../user';
 import data from '../data';
 import Statistics from './Statistics';
+import StatisticsList from './StatisticsList';
 
 // import data from "../"
 
@@ -25,13 +26,15 @@ export const App = () => {
         stats={user.stats}
       />
 
-      {data.map(item => (
-        <Statistics stats={data}
+      {/* {data.map(item => (
+        <Statistics title={"Upload stats"} stats={data}
           key={item.id}
           label={item.label}
           percentage={item.percentage}
         />
-      ))}
+      ))} */}
+      <StatisticsList  stats={data}/>
+      
     </div>
   );
 };
