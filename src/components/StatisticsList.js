@@ -1,28 +1,27 @@
-import Statistics from "./Statistics"
+import Statistics from './Statistics';
 import PropTypes from 'prop-types';
 
-
-
-function StatisticsList({stats}) {
-  
-  <section class="statistics">
- 
-  <h2 class="title">Upload stats</h2>
-
-    return(<ul class="stat-list">
-    {stats.map(item => (
-    <li key={item.id}>
-        <Statistics 
-        // title={"Upload stats"}      
-      label={item.label}
-      percentage={item.percentage}
-    />
-    </li>))}      
-</ul>)
-
-</section>
-    
-
+function StatisticsList({ stats }) {
+  // console.log(stats);
+  return (
+    <ul class="stat-list">
+      {stats.map(item => (
+        <li key={item.id}>
+          <Statistics label={item.label} percentage={item.percentage} />
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 export default StatisticsList;
+
+StatisticsList.proppTypes ={
+  stats: PropTypes.arrayOf(PropTypes.shape(
+    {
+      id: PropTypes.number.isRequired,
+      label: PropTypes.string,
+      percentage: PropTypes.number
+    }
+  ))
+}

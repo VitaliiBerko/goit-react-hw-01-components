@@ -1,23 +1,28 @@
 import Profile from './Profile';
 import user from '../user';
 import data from '../data';
-import Statistics from './Statistics';
 import StatisticsList from './StatisticsList';
+import { Fragment } from 'react';
+import { ContainerTitle } from './ContainerTitle';
+import { FriendList } from './FriendList';
+import friends from "../friends"
+import { TransactionHistory } from './TransactionHistory';
+import transactions from "../transactions";
 
-// import data from "../"
+
 
 export const App = () => {
   return (
-    <div
-    // style={{
+    <Fragment>
+    {/* // style={{
     //   height: '100vh',
     //   display: 'flex',
     //   justifyContent: 'center',
     //   alignItems: 'center',
     //   fontSize: 40,
     //   color: '#010101'
-    // }}
-    >
+    // }} */}
+    
       <Profile
         username={user.username}
         tag={user.tag}
@@ -25,16 +30,16 @@ export const App = () => {
         avatar={user.avatar}
         stats={user.stats}
       />
-
-      {/* {data.map(item => (
-        <Statistics title={"Upload stats"} stats={data}
-          key={item.id}
-          label={item.label}
-          percentage={item.percentage}
-        />
-      ))} */}
+      <>
+      <ContainerTitle title="Upload stats">
       <StatisticsList  stats={data}/>
-      
-    </div>
+      </ContainerTitle>
+      </>
+      <>
+      <FriendList friends ={friends}/>
+      </>
+      <TransactionHistory items={transactions}/>
+
+    </Fragment>
   );
 };
