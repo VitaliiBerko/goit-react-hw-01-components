@@ -1,0 +1,18 @@
+.status {
+  display: block;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: none;
+  width: 16px;
+  height: 16px;
+}
+
+.avatar {
+  margin-right: 10px;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 700;
+  color: black;
+}

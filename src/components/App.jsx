@@ -1,28 +1,18 @@
-import Profile from './Profile';
-import user from '../user';
-import data from '../data';
-import StatisticsList from './StatisticsList';
+import Profile from './Profile/Profile';
+import user from '../components/Profile/user';
+import data from '../components/Statistics/data';
+
 import { Fragment } from 'react';
-import { ContainerTitle } from './ContainerTitle';
-import { FriendList } from './FriendList';
-import friends from "../friends"
-import { TransactionHistory } from './TransactionHistory';
-import transactions from "../transactions";
 
-
+import { FriendList } from './FriendList/FriendList';
+import friends from '../components/FriendList/friends';
+import { TransactionHistory } from './TransactionHistory/TransactionHistory';
+import transactions from '../components/TransactionHistory/transactions';
+import Statistics from './Statistics/Statistics';
 
 export const App = () => {
   return (
     <Fragment>
-    {/* // style={{
-    //   height: '100vh',
-    //   display: 'flex',
-    //   justifyContent: 'center',
-    //   alignItems: 'center',
-    //   fontSize: 40,
-    //   color: '#010101'
-    // }} */}
-    
       <Profile
         username={user.username}
         tag={user.tag}
@@ -31,15 +21,12 @@ export const App = () => {
         stats={user.stats}
       />
       <>
-      <ContainerTitle title="Upload stats">
-      <StatisticsList  stats={data}/>
-      </ContainerTitle>
+        <Statistics title="Upload stats" stats={data} />
       </>
       <>
-      <FriendList friends ={friends}/>
+        <FriendList friends={friends} />
       </>
-      <TransactionHistory items={transactions}/>
-
+      <TransactionHistory items={transactions} />
     </Fragment>
   );
 };
