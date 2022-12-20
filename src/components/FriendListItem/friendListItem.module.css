@@ -1,10 +1,15 @@
 .status {
   display: block;
   margin-right: 10px;
+  background-color: red;
   border-radius: 50%;
   border: none;
   width: 16px;
   height: 16px;
+}
+
+.status.active {
+  background-color: green;
 }
 
 .avatar {
